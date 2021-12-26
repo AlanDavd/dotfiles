@@ -28,7 +28,7 @@ eval $(thefuck --alias)
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=""
+ZSH_THEME="robbyrussell"
 
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins
@@ -103,5 +103,15 @@ if [[ $OSTYPE = (linux)* ]]; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
+
+# Alias
+alias makecpp='g++ app.cpp -o app && cat input.txt | ./app > output.txt'
+alias chis='history | awk "{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}" | sort -n -r | head -10'
+alias gst='git status'
+alias gc='git checkout'
+alias ga='git add --all'
+alias gcm='git commit -m'
+alias gitrlc='git reset --soft HEAD~1'
+alias dnm='find / -name node_modules | xargs rm -rf'
 
 ### End of Zinit's installer chunk
