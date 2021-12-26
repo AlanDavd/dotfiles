@@ -76,7 +76,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # GitHub Credentials
-GITHUB_USERNAME=charliesbot
+GITHUB_USERNAME=alandavd
 
 # pipenv
 export PIP_CONFIG_FILE=~/.config/pip/pip.conf
