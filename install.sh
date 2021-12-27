@@ -7,7 +7,7 @@ if [[ `uname` == "Linux"   ]]; then
   echo "Changing shell to zsh"
   sudo chsh -s $(which zsh)
   # Adding homebrew to zprofile
-  echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/aland/.zprofile
+  echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/alanrojaslopez/.zprofile
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   echo "Installing PyEnv"
   curl https://pyenv.run | bash
@@ -65,10 +65,6 @@ brew install gdb
 brew install bazel
 brew install cmake
 brew install luarocks
-
-# FORMATTERS
-brew install shfmt
-brew install clang-format
 
 if [[ `uname` == "Linux"   ]]; then
   echo "Linux detected. Using Linux config..."
