@@ -7,7 +7,7 @@ if [[ `uname` == "Linux"   ]]; then
   echo "Changing shell to zsh"
   sudo chsh -s $(which zsh)
   # Adding homebrew to zprofile
-  echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/charlie/.zprofile
+  echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> /home/aland/.zprofile
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   echo "Installing PyEnv"
   curl https://pyenv.run | bash
@@ -93,6 +93,15 @@ if [[ `uname` == "Darwin"   ]]; then
   brew install --cask font-jetbrains-mono
   brew install --cask font-iosevka
   brew install --cask rectangle
+  brew install --cask notion
+  brew install --cask brave-browser
+  brew install --cask slack
+  brew install --cask discord
+  brew install --cask spotify
+  brew install --cask flux
+  brew install --cask private-internet-access
+  brew install --cask zoom
+  brew install --cask google-chrome
 
   brew install deno # deno brew formula only works with mac
   brew install reattach-to-user-namespace

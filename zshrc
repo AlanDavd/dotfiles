@@ -53,7 +53,7 @@ alias pip=pip3
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Paths
-export ANDROID_HOME=/Users/charlie/Library/Android/sdk
+export ANDROID_HOME=/Users/alanrojaslopez/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
@@ -108,9 +108,6 @@ fi
 alias makecpp='g++ app.cpp -o app && cat input.txt | ./app > output.txt'
 alias chis='history | awk "{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}" | sort -n -r | head -10'
 alias gst='git status'
-alias gc='git checkout'
-alias ga='git add --all'
-alias gcm='git commit -m'
 alias gitrlc='git reset --soft HEAD~1'
 alias dnm='find / -name node_modules | xargs rm -rf'
 
