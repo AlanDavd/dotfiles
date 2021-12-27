@@ -39,6 +39,7 @@ pyenv global 3.9.5
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/init.lua ~/.config/nvim/init.lua
+ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
 ln -s ~/dotfiles/lua/* ~/.config/nvim/lua
 ln -s ~/dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s ~/dotfiles/wezterm.lua ~/.wezterm.lua
