@@ -28,7 +28,7 @@ rm -rf ~/.vim ~/.vimrc ~/.zshrc ~/.tmux ~/.tmux.conf ~/.config/nvim 2> /dev/null
 
 echo "Creating symlinks"
 # Neovim expects some folders already exist
-mkdir -p ~/.config ~/.config/nvim ~/.config/nvim/lua
+mkdir -p ~/.config ~/.config/nvim ~/.config/nvim/lua ~/.config/nvim/plugged
 
 echo "Installing Python 3"
 # install python 3
@@ -113,9 +113,9 @@ $(brew --prefix)/opt/fzf/install
 # install fnm
 curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
 
-# install Paq - Neovim Plugin Manager
-git clone https://github.com/savq/paq-nvim.git \
-    "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/paqs/opt/paq-nvim
+# install Vim-Plug - Neovim Plugin Manager
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 pip3 install pynvim
 
