@@ -14,7 +14,7 @@ set relativenumber
 set laststatus=2
 syntax on
 
-call plug#begin("~/.vim/plugged")
+call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'dracula/vim'

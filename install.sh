@@ -38,11 +38,7 @@ pyenv global 3.9.5
 # Symlinking files
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/init.lua ~/.config/nvim/init.lua
 ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
-ln -s ~/dotfiles/lua/* ~/.config/nvim/lua
-ln -s ~/dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
-ln -s ~/dotfiles/wezterm.lua ~/.wezterm.lua
 
 # Italics and true color profile for tmux
 tic -x tmux.terminfo
@@ -51,10 +47,8 @@ echo "Installing brew"
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install ripgrep
 brew install tmux
 brew install neovim
-brew install ag
 brew install fzf
 brew install bat
 brew install thefuck
@@ -64,7 +58,6 @@ brew install gcc
 brew install gdb
 brew install bazel
 brew install cmake
-brew install luarocks
 
 if [[ `uname` == "Linux"   ]]; then
   echo "Linux detected. Using Linux config..."
@@ -83,12 +76,12 @@ if [[ `uname` == "Darwin"   ]]; then
   brew tap homebrew/cask-fonts
 
   # casks only work in mac
-  brew install --cask kitty
   brew install --cask font-fira-code
   brew install --cask font-cascadia
   brew install --cask font-jetbrains-mono
   brew install --cask font-iosevka
   brew install --cask rectangle
+  brew install luarocks
   brew install --cask notion
   brew install --cask brave-browser
   brew install --cask slack
@@ -99,28 +92,15 @@ if [[ `uname` == "Darwin"   ]]; then
   brew install --cask zoom
   brew install --cask google-chrome
 
-  brew install deno # deno brew formula only works with mac
   brew install reattach-to-user-namespace
 fi
 
 # FZF shortcuts
 $(brew --prefix)/opt/fzf/install
 
-# install fnm
-curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
-
 # install Vim-Plug - Neovim Plugin Manager
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-pip3 install pynvim
-
-# pure prompt manual config
-mkdir -p "$HOME/.zsh"
-git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-
-# lua formatter
-luarocks install --server=https://luarocks.org/dev luaformatter
 
 # Go setup
 mkdir -p $HOME/go/{bin,src,pkg}

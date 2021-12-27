@@ -6,21 +6,12 @@ autoload -Uz _zinit
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-
-# This fixes prompt error from Pure
-fpath+=$HOME/.zsh/pure
-
-# fnm
-# export PATH=/Users/charlie/.fnm:$PATH
-eval "`fnm env`"
 
 # fuck!
 eval $(thefuck --alias)
@@ -29,7 +20,6 @@ eval $(thefuck --alias)
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -93,18 +83,6 @@ export FZF_DEFAULT_COMMAND='rg --files --fixed-strings --hidden --follow --glob 
 
 export PATH="/usr/local/sbin:$PATH"
 
-# Pure theme
-autoload -U promptinit; promptinit
-prompt pure
-
-# Pyenv
-if [[ $OSTYPE = (linux)* ]]; then
-  export PATH="/home/charlie/.pyenv/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
-
-# Alias
 alias makecpp='g++ app.cpp -o app && cat input.txt | ./app > output.txt'
 alias chis='history | awk "{cmd[$2]++} END {for(elem in cmd) {print cmd[elem] " " elem}}" | sort -n -r | head -10'
 alias gst='git status'
