@@ -58,6 +58,7 @@ brew install gcc
 brew install gdb
 brew install bazel
 brew install cmake
+brew install zsh-autosuggestions
 
 if [[ `uname` == "Linux"   ]]; then
   echo "Linux detected. Using Linux config..."
